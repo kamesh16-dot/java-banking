@@ -1,0 +1,16 @@
+# Netlify configuration for NexaBank Monorepo
+
+[build]
+  # Base directory where frontend source code lives
+  base = "frontend"
+  # Build command executed inside base directory
+  command = "npm run build"
+  # Directory containing built static assets (relative to base)
+  publish = "dist"
+
+# Single Page Application (SPA) redirect rule
+# Redirects all frontend routes to index.html so React Router can handle them
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
